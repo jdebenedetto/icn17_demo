@@ -9,9 +9,16 @@ This folder contains:
 * producer
 * ANP forwarder
 
-How to deploy:  
+## How to deploy:  
 
 The experiment is supposed to run on a star topology (1 core node and 3 edge nodes):
 * On each node an instance of the ANP forwarder must run
-* 2 edge nodes act as consumers (fast and slow)
-* 1 edge nodes act as producer
+* 2 edge nodes acting as consumers (fast and slow)
+* 1 edge node act as producer
+
+## Running the experiment
+
+
+## Expeted outcome
+
+
