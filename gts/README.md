@@ -1,2 +1,2 @@
 # Topologies
-This folder contains the description of the topologies used during the demonstration using the GTS DSL.
+This folder contains the GTS configuration related files.

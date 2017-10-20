@@ -12,13 +12,13 @@ This folder contains:
 ## How to deploy:  
 
 The experiment is supposed to run on a star topology (1 core node and 3 edge nodes):
-* On each node an instance of the ANP forwarder must run
-* 2 edge nodes acting as consumers (fast and slow)
-* 1 edge node act as producer
+* On each node must run an instance of the [ANP forwarder](https://github.com/jdebenedetto/icn17_demo/tree/master/said-anp/forwarder)
+* 2 edge nodes acting as consumers ([fast](https://github.com/jdebenedetto/icn17_demo/tree/master/said-anp/fast-cons) and [slow](https://github.com/jdebenedetto/icn17_demo/tree/master/said-anp/slow-cons))
+* 1 edge node act as [producer](https://github.com/jdebenedetto/icn17_demo/tree/master/said-anp/prod)
 
-## Running the experiment
+All the modules have dependencies on a modified version of the [ccnx-libraries](https://github.com/jdebenedetto/icn17_demo/tree/master/said-anp/ccnx-libraries).  
 
+For other depencies please follow the instruction of the [CICN project](https://wiki.fd.io/view/Cicn).  
 
-## Expeted outcome
 
 
