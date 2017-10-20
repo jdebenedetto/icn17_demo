@@ -1,5 +1,5 @@
 # AnyNextPacket Experiment
-This folder contain to source code used for the demo experiment. The AnyNextPacket forwarding is described in the paper PAPER.  
+This folder contain to source code used for the demo experiment. The AnyNextPacket forwarding is described in the paper [SAID: A Control Protocol for Scalable and Adaptive Information Dissemination in ICN](https://www.net.informatik.uni-goettingen.de/publications/1972/PDF).  
 
 During the demo experiment some configurations were hardcoded in the source-code. For a general implementation of the SAID-based forwarder refer to this repository: [https://github.com/jdebenedetto/said.git](https://github.com/jdebenedetto/said.git)   
 
