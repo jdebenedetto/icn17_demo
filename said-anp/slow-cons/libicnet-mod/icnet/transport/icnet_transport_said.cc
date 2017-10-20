@@ -1,3 +1,4 @@
+
 /*
  * Copyright (c) 2017 Cisco and/or its affiliates.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -192,7 +193,7 @@ void SaidTransportProtocol::scheduleNextInterests() {
 
     double maxWindowSize = -1;
     socket_->getSocketOption(MAX_WINDOW_SIZE, maxWindowSize);
-    maxWindowSize = 100; //TEST
+    maxWindowSize = 50; //TEST
 
     if (current_window_size_ > maxWindowSize) {
       current_window_size_ = maxWindowSize;
@@ -233,7 +234,7 @@ void SaidTransportProtocol::decreaseWindow() {
 void SaidTransportProtocol::increaseWindow() {
   double max_window_size = -1;
   socket_->getSocketOption(MAX_WINDOW_SIZE, max_window_size);
-  max_window_size = 150; //TEST
+  max_window_size = 50; //TEST
   if (current_window_size_ < max_window_size) {
     current_window_size_++;
     socket_->setSocketOption(CURRENT_WINDOW_SIZE, current_window_size_);
@@ -479,19 +480,14 @@ void SaidTransportProtocol::checkForFastRetransmission(uint64_t last_received) {
 
   // uint64_t possibly_lost_segment = 0;
   uint64_t highest_received_segment = received_segments_.rbegin()->first;
-  // std::cout << "final_block_number = " << final_block_number_ << std::endl; //DEBUG
-  // std::cout << "highest_received_segment = " << highest_received_segment << std::endl; //DEBUG
-  // std::cout << "last_reassembled_segment = " << last_reassembled_segment_ << std::endl; //DEBUG  
 
   for (uint64_t i = last_reassembled_segment_; i <= highest_received_segment; i++) {
-    if (interests_in_flight_ >= 100) { //fixed window size
+    if (interests_in_flight_ >= 50) { //fixed window size
       break;
     }
     if (received_segments_.find(i) == received_segments_.end()) {
       if (fast_retransmitted_segments.find(i) == fast_retransmitted_segments.end()) {
-      // if (true) { //HACK
         fast_retransmitted_segments[i] = true;
-        std::cout << "Repair segment = " << i << std::endl; //DEBUG        
         fastRetransmit(i);
         // break; //TEST only one repair at a time
       }
